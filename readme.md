@@ -5,7 +5,9 @@ cd /root/tridentdemo
 ```
 
 This will take some minutes...
-
+```console
+helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
+```
 
 ```console
 helm install trident netapp-trident/trident-operator --version 100.2510.0 --create-namespace --namespace trident --set tridentAutosupportImage=registry.demo.netapp.com/trident-autosupport:25.10.0,operatorImage=registry.demo.netapp.com/trident-operator:25.10.0,tridentImage=registry.demo.netapp.com/trident:25.10.0,tridentSilenceAutosupport=true,windows=true,imagePullSecrets[0]=regcred
