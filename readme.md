@@ -14,7 +14,7 @@ helm install trident netapp-trident/trident-operator --version 100.2510.0 --crea
 ```
 
 ```console
-kubectl get pods -n <trident-namespace>
+kubectl get pods -n trident
 ```
 
 ## :trident: Scenario 02 - Configure Trident
