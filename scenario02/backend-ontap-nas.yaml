@@ -1,0 +1,18 @@
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: backend-ontap-nas
+  namespace: trident
+spec:
+  version: 1
+  backendName: nas
+  useRest: false
+  storageDriverName: ontap-nas
+  managementLIF: 192.168.0.140
+  autoExportCIDRs:
+    - 192.168.0.0/24
+  autoExportPolicy: true
+  defaults:
+    nameTemplate: "{{ .volume.Namespace }}_{{ .volume.RequestName }}_{{ .volume.Name }}"
+  credentials:
+    name: secret-svm

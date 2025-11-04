@@ -1,0 +1,16 @@
+apiVersion: protect.trident.netapp.io/v1
+kind: Schedule
+metadata:
+  name: nasapp-sched
+  namespace: nasapp
+spec:
+  appVaultRef: ontap-vault
+  applicationRef: nasapp
+  backupRetention: "3"
+  dataMover: Kopia
+  enabled: true
+  granularity: Custom
+  recurrenceRule: |-
+    DTSTART:20250106T000100Z
+    RRULE:FREQ=MINUTELY;INTERVAL=5
+  snapshotRetention: "3"
