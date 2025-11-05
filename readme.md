@@ -94,7 +94,7 @@ kubectl exec -n allstorageclasses $(kubectl get pod -n allstorageclasses -o name
 kubectl exec -n allstorageclasses $(kubectl get pod -n allstorageclasses -o name) -- more /saneco/test.txt
 ```
 
-# App for all ontap-nas driver
+# App for ontap-nas driver
 
 ```console
 kubectl apply -f nasapp.yaml
@@ -112,7 +112,7 @@ kubectl exec -n nasapp $(kubectl get pod -n nasapp -o name) -- sh -c 'echo "Hell
 kubectl exec -n nasapp $(kubectl get pod -n nasapp -o name) -- more /nas/test.txt
 ```
 
-# App for all ontap-nas-economy driver
+# App for ontap-nas-economy driver
 
 ```console
 kubectl apply -f nasecoapp.yaml
@@ -130,7 +130,7 @@ kubectl exec -n nasecoapp $(kubectl get pod -n nasecoapp -o name) -- sh -c 'echo
 kubectl exec -n nasecoapp $(kubectl get pod -n nasecoapp -o name) -- more /naseco/test.txt
 ```
 
-# App for all ontap-san driver
+# App for ontap-san driver
 
 ```console
 kubectl apply -f sanapp.yaml
@@ -148,7 +148,7 @@ kubectl exec -n sanapp $(kubectl get pod -n sanapp -o name) -- sh -c 'echo "Hell
 kubectl exec -n sanapp $(kubectl get pod -n sanapp -o name) -- more /san/test.txt
 ```
 
-# App for all ontap-san-economy driver
+# App for ontap-san-economy driver
 
 ```console
 kubectl apply -f sanecoapp.yaml
@@ -170,11 +170,6 @@ kubectl exec -n sanecoapp $(kubectl get pod -n sanecoapp -o name) -- more /sanec
 ## :trident: Scenario 04 - Backup anyone? Installation of Trident protect
 ```console
 cd /root/tridentdemo/scenario04
-```
-
-```console
-kubectl create ns trident-protect
-kubectl create secret docker-registry regcred --docker-username=registryuser --docker-password=Netapp1! -n trident-protect --docker-server=registry.demo.netapp.com
 ```
 
 ```console
