@@ -98,33 +98,33 @@ EOT
   fi
 fi
 
-if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/trident/tags/list' | jq -r '.tags[]? | select(.=="25.10.0")')" ]]; then
+if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/trident/tags/list' | jq -r '.tags[]? | select(.=="26.02.0")')" ]]; then
   echo
   echo "##############################################################"
   echo "# Skopeo Copy Multi-Arch TRIDENT Into Private Repo"
   echo "##############################################################"
   podman run --rm quay.io/containers/skopeo:latest copy --multi-arch all --dest-creds 'registryuser:Netapp1!' \
-  docker://quay.io/netapp/trident:25.10.0 docker://registry.demo.netapp.com/trident:25.10.0 \
+  docker://quay.io/netapp/trident:26.02.0 docker://registry.demo.netapp.com/trident:26.02.0 \
   --src-tls-verify=false --dest-tls-verify=false
 fi
 
-if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/trident-operator/tags/list' | jq -r '.tags[]? | select(.=="25.10.0")')" ]]; then
+if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/trident-operator/tags/list' | jq -r '.tags[]? | select(.=="26.02.0")')" ]]; then
   echo
   echo "##############################################################"
   echo "# Skopeo Copy TRIDENT OPERATOR Into Private Repo"
   echo "##############################################################"
   podman run --rm quay.io/containers/skopeo:latest copy --dest-creds 'registryuser:Netapp1!' \
-  docker://quay.io/netapp/trident-operator:25.10.0 docker://registry.demo.netapp.com/trident-operator:25.10.0 \
+  docker://quay.io/netapp/trident-operator:26.02.0 docker://registry.demo.netapp.com/trident-operator:26.02.0 \
   --src-tls-verify=false --dest-tls-verify=false
 fi
 
-if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/trident-autosupport/tags/list' | jq -r '.tags[]? | select(.=="25.10.0")')" ]]; then
+if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/trident-autosupport/tags/list' | jq -r '.tags[]? | select(.=="26.02.0")')" ]]; then
   echo
   echo "##############################################################"
   echo "# Skopeo Copy TRIDENT AUTOSUPPORT Into Private Repo"
   echo "##############################################################"
   podman run --rm quay.io/containers/skopeo:latest copy --dest-creds 'registryuser:Netapp1!' \
-  docker://quay.io/netapp/trident-autosupport:25.10.0 docker://registry.demo.netapp.com/trident-autosupport:25.10.0 \
+  docker://quay.io/netapp/trident-autosupport:26.02.0 docker://registry.demo.netapp.com/trident-autosupport:26.02.0 \
   --src-tls-verify=false --dest-tls-verify=false
 fi
 
@@ -143,84 +143,84 @@ else
   echo "##############################################################"
 fi
 
-if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/controller/tags/list' | jq -r '.tags[]? | select(.=="25.10.0")')" ]]; then
+if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/controller/tags/list' | jq -r '.tags[]? | select(.=="26.02.0")')" ]]; then
   echo
   echo "##############################################################"
   echo "# Skopeo Copy Trident Protect Controller Into Private Repo"
   echo "##############################################################"
   podman run --rm quay.io/containers/skopeo:latest copy --dest-creds 'registryuser:Netapp1!' \
-    docker://docker.io/netapp/controller:25.10.0 docker://registry.demo.netapp.com/controller:25.10.0 \
+    docker://docker.io/netapp/controller:26.02.0 docker://registry.demo.netapp.com/controller:26.02.0 \
     --src-tls-verify=false --dest-tls-verify=false
 fi
 
-if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/exechook/tags/list' | jq -r '.tags[]? | select(.=="25.10.0")')" ]]; then
+if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/exechook/tags/list' | jq -r '.tags[]? | select(.=="26.02.0")')" ]]; then
   echo
   echo "##############################################################"
   echo "# Skopeo Copy Trident Protect Exechook Into Private Repo"
   echo "##############################################################"
   podman run --rm quay.io/containers/skopeo:latest copy --dest-creds 'registryuser:Netapp1!' \
-  docker://docker.io/netapp/exechook:25.10.0 docker://registry.demo.netapp.com/exechook:25.10.0 \
+  docker://docker.io/netapp/exechook:26.02.0 docker://registry.demo.netapp.com/exechook:26.02.0 \
   --src-tls-verify=false --dest-tls-verify=false
 fi
 
 
-if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/resourcebackup/tags/list' | jq -r '.tags[]? | select(.=="25.10.0")')" ]]; then
+if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/resourcebackup/tags/list' | jq -r '.tags[]? | select(.=="26.02.0")')" ]]; then
   echo
   echo "##############################################################"
   echo "# Skopeo Copy Trident Protect ResourceBackup Into Private Repo"
   echo "##############################################################"
   podman run --rm quay.io/containers/skopeo:latest copy --dest-creds 'registryuser:Netapp1!' \
-  docker://docker.io/netapp/resourcebackup:25.10.0 docker://registry.demo.netapp.com/resourcebackup:25.10.0 \
+  docker://docker.io/netapp/resourcebackup:26.02.0 docker://registry.demo.netapp.com/resourcebackup:26.02.0 \
   --src-tls-verify=false --dest-tls-verify=false
 fi
 
-if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/resourcerestore/tags/list' | jq -r '.tags[]? | select(.=="25.10.0")')" ]]; then
+if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/resourcerestore/tags/list' | jq -r '.tags[]? | select(.=="26.02.0")')" ]]; then
   echo
   echo "##############################################################"
   echo "# Skopeo Copy Trident Protect ResourceRestore Into Private Repo"
   echo "##############################################################"
   podman run --rm quay.io/containers/skopeo:latest copy --dest-creds 'registryuser:Netapp1!' \
-  docker://docker.io/netapp/resourcerestore:25.10.0 docker://registry.demo.netapp.com/resourcerestore:25.10.0 \
+  docker://docker.io/netapp/resourcerestore:26.02.0 docker://registry.demo.netapp.com/resourcerestore:26.02.0 \
   --src-tls-verify=false --dest-tls-verify=false
 fi
 
-if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/resourcedelete/tags/list' | jq -r '.tags[]? | select(.=="25.10.0")')" ]]; then
+if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/resourcedelete/tags/list' | jq -r '.tags[]? | select(.=="26.02.0")')" ]]; then
   echo
   echo "##############################################################"
   echo "# Skopeo Copy Trident Protect ResourceDelete Into Private Repo"
   echo "##############################################################"
   podman run --rm quay.io/containers/skopeo:latest copy --dest-creds 'registryuser:Netapp1!' \
-  docker://docker.io/netapp/resourcedelete:25.10.0 docker://registry.demo.netapp.com/resourcedelete:25.10.0 \
+  docker://docker.io/netapp/resourcedelete:26.02.0 docker://registry.demo.netapp.com/resourcedelete:26.02.0 \
   --src-tls-verify=false --dest-tls-verify=false
 fi
 
-if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/restic/tags/list' | jq -r '.tags[]? | select(.=="25.10.0")')" ]]; then
+if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/restic/tags/list' | jq -r '.tags[]? | select(.=="26.02.0")')" ]]; then
   echo
   echo "##############################################################"
   echo "# Skopeo Copy Trident Protect Restic Into Private Repo"
   echo "##############################################################"
   podman run --rm quay.io/containers/skopeo:latest copy --dest-creds 'registryuser:Netapp1!' \
-  docker://docker.io/netapp/restic:25.10.0 docker://registry.demo.netapp.com/restic:25.10.0 \
+  docker://docker.io/netapp/restic:26.02.0 docker://registry.demo.netapp.com/restic:26.02.0 \
   --src-tls-verify=false --dest-tls-verify=false
 fi
 
-if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/kopia/tags/list' | jq -r '.tags[]? | select(.=="25.10.0")')" ]]; then
+if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/kopia/tags/list' | jq -r '.tags[]? | select(.=="26.02.0")')" ]]; then
   echo
   echo "##############################################################"
   echo "# Skopeo Copy Trident Protect Kopia Into Private Repo"
   echo "##############################################################"
   podman run --rm quay.io/containers/skopeo:latest copy --dest-creds 'registryuser:Netapp1!' \
-  docker://docker.io/netapp/kopia:25.10.0 docker://registry.demo.netapp.com/kopia:25.10.0 \
+  docker://docker.io/netapp/kopia:26.02.0 docker://registry.demo.netapp.com/kopia:26.02.0 \
   --src-tls-verify=false --dest-tls-verify=false
 fi
 
-if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/kopiablockrestore/tags/list' | jq -r '.tags[]? | select(.=="25.10.0")')" ]]; then
+if [[ -z "$(curl -s -u registryuser:Netapp1! 'https://registry.demo.netapp.com/v2/kopiablockrestore/tags/list' | jq -r '.tags[]? | select(.=="26.02.0")')" ]]; then
   echo
   echo "##############################################################"
   echo "# Skopeo Copy Trident Protect Kopia Block Restore Into Private Repo"
   echo "##############################################################"
   podman run --rm quay.io/containers/skopeo:latest copy --dest-creds 'registryuser:Netapp1!' \
-  docker://docker.io/netapp/kopiablockrestore:25.10.0 docker://registry.demo.netapp.com/kopiablockrestore:25.10.0 \
+  docker://docker.io/netapp/kopiablockrestore:26.02.0 docker://registry.demo.netapp.com/kopiablockrestore:26.02.0 \
   --src-tls-verify=false --dest-tls-verify=false
 fi
 

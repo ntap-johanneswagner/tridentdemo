@@ -10,7 +10,7 @@ helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
 ```
 
 ```console
-helm install trident netapp-trident/trident-operator --version 100.2510.0 --create-namespace --namespace trident --set tridentAutosupportImage=registry.demo.netapp.com/trident-autosupport:25.10.0,operatorImage=registry.demo.netapp.com/trident-operator:25.10.0,tridentImage=registry.demo.netapp.com/trident:25.10.0,tridentSilenceAutosupport=true,windows=true,imagePullSecrets[0]=regcred
+helm install trident netapp-trident/trident-operator --version 100.2602.0 --create-namespace --namespace trident --set tridentAutosupportImage=registry.demo.netapp.com/trident-autosupport:26.02.0,operatorImage=registry.demo.netapp.com/trident-operator:26.02.0,tridentImage=registry.demo.netapp.com/trident:26.02.0,tridentSilenceAutosupport=true,windows=true,imagePullSecrets[0]=regcred
 ```
 
 ```console
@@ -188,7 +188,7 @@ Trident Protect CR can be configured with YAML manifests or CLI.
 Let's install its CLI which avoids making mistakes when creating the YAML files:  
 ```console
 cd
-curl -L -o tridentctl-protect https://github.com/NetApp/tridentctl-protect/releases/download/25.10.0/tridentctl-protect-linux-amd64
+curl -L -o tridentctl-protect https://github.com/NetApp/tridentctl-protect/releases/download/26.02.0/tridentctl-protect-linux-amd64
 ```
 ```console
 chmod +x tridentctl-protect
